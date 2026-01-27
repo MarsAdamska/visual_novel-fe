@@ -15,15 +15,21 @@ export class Scene implements OnInit {
     {
       id: 'protag',
       name: 'Protag',
-      url: 'assets/sprites/protag.png',
+      url: 'img/sprite/protag.jpg',
       position: 'left'
     },
     {
+      id: 'protag',
+      name: 'Protag',
+      url: 'img/sprite/protag.jpg',
+      position: 'right'
+    },
+    /*{
       id: 'npc1',
       name: 'Npc1',
-      url: 'assets/sprites/npc1.png',
+      url: 'img/sprite/npc1.png',
       position: 'right'
-    }
+    }*/
   ];
 
   @Input() backgroundUrl?: string;

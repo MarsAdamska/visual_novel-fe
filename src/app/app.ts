@@ -8,6 +8,5 @@ import { Component, signal } from '@angular/core';
 })
 export class App {
   protected readonly title = signal('visual_novel-fe');
-  bg = 'assets/bg.jpg';
-  //bg = 'img/bg.jpg'; -> prova in locale checked
+  bg = 'img/scene/bg.jpg';
 }
