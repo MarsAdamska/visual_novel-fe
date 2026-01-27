@@ -1,0 +1,21 @@
+.sprite {
+  position: absolute;
+  bottom: 0;
+}
+
+.sprite.left {
+  left: 5%;
+}
+
+.sprite.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sprite.right {
+  right: 5%;
+}
+
+.sprite img {
+  height: 90vh;
+}

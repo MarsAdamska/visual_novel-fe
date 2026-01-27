@@ -1,0 +1,13 @@
+@if(backgroundStyle){
+<div class="scene" [style.backgroundImage]="backgroundStyle">
+
+    <div class="sprite">
+        <app-sprite *ngFor="let sprite of sprites" [id]="sprite.id" [name]="sprite.name" [url]="sprite.url"
+            [position]="sprite.position">
+        </app-sprite>
+    </div>
+
+    <!--<div class="dialogue-box"></div> CI VA UN COMPONENTE!-->
+
+</div>
+}

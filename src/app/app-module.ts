@@ -3,15 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { Scene } from './scene/scene';
+import { SpriteComponent } from './sprite/sprite';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    Scene,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    SpriteComponent
+],
   providers: [
     provideBrowserGlobalErrorListeners(),
   ],
