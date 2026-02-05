@@ -6,20 +6,21 @@ import { App } from './app';
 import { Scene } from './scene/scene';
 import { SpriteComponent } from './sprite/sprite';
 import { CommonModule } from '@angular/common';
+import { Dialogue } from './dialogue/dialogue';
+import { Choice } from './choice/choice';
+import { ChoiceModel } from './choice-model';
 
 @NgModule({
   declarations: [
-    App,
-    Scene,
   ],
   imports: [
+    App,
     BrowserModule,
     AppRoutingModule,
-    SpriteComponent
+    SpriteComponent,
 ],
   providers: [
     provideBrowserGlobalErrorListeners(),
   ],
-  bootstrap: [App]
 })
 export class AppModule { }

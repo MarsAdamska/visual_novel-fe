@@ -9,3 +9,16 @@
   position: relative;
   overflow: hidden;
 }
+
+.choice-overlay {
+  position: fixed;          /* layer sopra TUTTO */
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  z-index: 200;
+  pointer-events: auto;
+}

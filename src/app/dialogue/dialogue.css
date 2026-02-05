@@ -1,0 +1,182 @@
+.layer {
+  position: fixed;
+  inset: 0;                 /* shorthand top/left/right/bottom */
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  pointer-events: none;     /* il layer non intercetta input */
+}
+
+/* ===== CONTENITORE DIALOGO ===== */
+.dialogue-box {
+  position: relative;       /* crea il contesto per speaker */
+  z-index: 110;
+
+  width: 88%;
+  max-width: 1100px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 20, 40, 0.85),
+    rgba(5, 10, 25, 0.95)
+  );
+
+  border: 2px solid rgba(180, 200, 255, 0.6);
+  border-radius: 6px;
+
+  box-shadow:
+    0 0 15px rgba(80, 120, 255, 0.35),
+    inset 0 0 8px rgba(255, 255, 255, 0.08);
+
+  padding: 20px 26px;
+
+  font-family: "Segoe UI", "Noto Sans JP", sans-serif;
+  color: #e8f0ff;
+
+  pointer-events: auto;     /* torna cliccabile */
+}
+
+/* ===== ETICHETTA SPEAKER ===== */
+.dialogue-box .speaker {
+  position: absolute;
+  top: -22px;
+  left: 18px;
+  z-index: 120;
+
+  background: linear-gradient(
+    to right,
+    #2b6cff,
+    #5fa8ff
+  );
+
+  color: white;
+  padding: 4px 14px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== TESTO ===== */
+.dialogue-box .text {
+  position: relative;
+  z-index: 115;
+
+  font-size: 1.15rem;
+  line-height: 1.6;
+
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== EFFETTO TYPING ===== */
+.dialogue-box.typing .text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid rgba(255, 255, 255, 0.8);
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* CON DISPLAY GRID:
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  place-items: end center;
+
+  pointer-events: none;
+}
+
+.dialogue-box {
+  position: relative;
+  z-index: 110;
+
+  width: 88%;
+  max-width: 1100px;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 8px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 20, 40, 0.85),
+    rgba(5, 10, 25, 0.95)
+  );
+
+  border: 2px solid rgba(180, 200, 255, 0.6);
+  border-radius: 6px;
+
+  box-shadow:
+    0 0 15px rgba(80, 120, 255, 0.35),
+    inset 0 0 8px rgba(255, 255, 255, 0.08);
+
+  padding: 20px 26px;
+
+  font-family: "Segoe UI", "Noto Sans JP", sans-serif;
+  color: #e8f0ff;
+
+  pointer-events: auto;
+}
+
+.dialogue-box .speaker {
+  position: absolute;
+  top: -22px;
+  left: 18px;
+  z-index: 120;
+
+  background: linear-gradient(
+    to right,
+    #2b6cff,
+    #5fa8ff
+  );
+
+  color: white;
+  padding: 4px 14px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.dialogue-box .text {
+  z-index: 115;
+
+  font-size: 1.15rem;
+  line-height: 1.6;
+
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.dialogue-box.typing .text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid rgba(255, 255, 255, 0.8);
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+*/

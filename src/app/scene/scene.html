@@ -1,13 +1,25 @@
-@if(backgroundStyle){
-<div class="scene" [style.backgroundImage]="backgroundStyle">
+@if (backgroundStyle) {
+  <div class="scene" [style.backgroundImage]="backgroundStyle">
 
     <div class="sprite">
-        <app-sprite *ngFor="let sprite of sprites" [id]="sprite.id" [name]="sprite.name" [url]="sprite.url"
-            [position]="sprite.position">
-        </app-sprite>
+      <app-sprite
+        *ngFor="let sprite of sprites"
+        [id]="sprite.id"
+        [name]="sprite.name"
+        [url]="sprite.url"
+        [position]="sprite.position">
+      </app-sprite>
     </div>
 
-    <!--<div class="dialogue-box"></div> CI VA UN COMPONENTE!-->
+    <app-dialogue [dialogue]="currentDialogue"></app-dialogue>
 
-</div>
+    <!-- LAYER SCELTE -->
+    <div class="choice-overlay">
+      <app-choice
+        [choices]="currentNode.choices"
+        (choiceSelected)="onChoiceSelected($event)"
+      ></app-choice>
+    </div>
+
+  </div>
 }

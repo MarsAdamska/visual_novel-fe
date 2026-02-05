@@ -1,0 +1,16 @@
+<!--<button
+  *ngFor="let choice of choices"
+  (click)="selectChoice(choice)"
+>
+  {{ choice.text }}
+</button>-->
+
+<div class="choices-container">
+  <button
+    *ngFor="let choice of choices"
+    class="choice-button"
+    (click)="selectChoice(choice)"
+  >
+    {{ choice.text }}
+  </button>
+</div>

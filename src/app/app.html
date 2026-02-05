@@ -1,2 +1,6 @@
-<app-scene [backgroundUrl]="bg"></app-scene>
+<app-scene
+  [backgroundUrl]="bg"
+  (dialogueChange)="currentDialogue = $event">
+</app-scene>
+
 

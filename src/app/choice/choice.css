@@ -1,0 +1,20 @@
+.choices-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.choice-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.choices-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.choice-button {
+  padding: 0.75rem 1rem;
+}

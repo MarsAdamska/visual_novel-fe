@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Sprite } from './sprite';
+import { SpriteComponent } from './sprite';
 
 describe('Sprite', () => {
-  let component: Sprite;
-  let fixture: ComponentFixture<Sprite>;
+  let component: SpriteComponent;
+  let fixture: ComponentFixture<SpriteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [Sprite]
+      declarations: [SpriteComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Sprite);
+    fixture = TestBed.createComponent(SpriteComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
