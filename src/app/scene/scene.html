@@ -1,25 +1,99 @@
-@if (backgroundStyle) {
-  <div class="scene" [style.backgroundImage]="backgroundStyle">
+<div class="scene">
 
-    <div class="sprite">
+  <img class="background" [src]="background">
+
+  <div class="sprites">
+
+    @for (sprite of sprites; track sprite.id) {
+
       <app-sprite
-        *ngFor="let sprite of sprites"
-        [id]="sprite.id"
-        [name]="sprite.name"
-        [url]="sprite.url"
+        [sprite]="sprite.url"
         [position]="sprite.position">
       </app-sprite>
-    </div>
 
-    <app-dialogue [dialogue]="currentDialogue"></app-dialogue>
-
-    <!-- LAYER SCELTE -->
-    <div class="choice-overlay">
-      <app-choice
-        [choices]="currentNode.choices"
-        (choiceSelected)="onChoiceSelected($event)"
-      ></app-choice>
-    </div>
+    }
 
   </div>
-}
+
+  <app-dialogue
+    [text]="dialogueText">
+  </app-dialogue>
+
+  <app-choice
+    [choices]="choices"
+    (choiceSelected)="onChoiceSelected($event)">
+  </app-choice>
+
+</div>
+
+
+
+<!--@if (backgroundStyle) {
+<div class="scene" [style.backgroundImage]="backgroundStyle">
+
+  <div class="background-layer" [style.backgroundImage]="backgroundStyle">
+  </div>
+
+  <div class="sprite">
+    <app-sprite *ngFor="let sprite of sprites" [id]="sprite.id" [name]="sprite.name" [url]="sprite.url"
+      [position]="sprite.position">
+    </app-sprite>
+  </div>
+
+  <app-dialogue [dialogue]="currentDialogue"></app-dialogue>
+
+  <!-- LAYER SCELTE -->
+<!--<div class="choice-overlay">
+    <app-choice [choices]="currentNode.choices" (choiceSelected)="onChoiceSelected($event)"></app-choice>
+  </div>
+
+</div>
+}-->
+
+<!--><div class="scene">
+
+  
+  <div
+    class="background-layer"
+    [style.backgroundImage]="backgroundStyle">
+  </div>
+
+  
+  <div class="sprite">
+    <app-sprite
+      *ngFor="let sprite of sprites"
+      [id]="sprite.id"
+      [name]="sprite.name"
+      [url]="sprite.url"
+      [position]="sprite.position">
+    </app-sprite>
+  </div>
+
+  
+  <app-dialogue [dialogue]="currentDialogue"></app-dialogue>
+
+  
+  <div class="choice-overlay">
+    <app-choice
+      [choices]="currentNode.choices"
+      (choiceSelected)="onChoiceSelected($event)">
+    </app-choice>
+  </div>
+
+</div>-->
+
+<!--<div class="scene" [style.backgroundImage]="backgroundStyle">
+
+  <div class="sprites-layer">
+    <app-sprite *ngFor="let sprite of sprites" [id]="sprite.id" [name]="sprite.name" [url]="sprite.url"
+      [position]="sprite.position">
+    </app-sprite>
+  </div>
+
+  <app-dialogue [dialogue]="currentDialogue">
+  </app-dialogue>
+
+  <app-choice [choices]="currentNode.choices" (choiceSelected)="onChoiceSelected($event)">
+  </app-choice>
+
+</div>-->

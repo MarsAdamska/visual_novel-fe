@@ -1,4 +1,16 @@
-.choices-container {
+.choices{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:10px;
+}
+
+button{
+  padding:10px;
+  font-size:16px;
+}
+
+/*.choices-container {
   display: flex;
   gap: 1rem;
 }
@@ -17,4 +29,4 @@
 
 .choice-button {
   padding: 0.75rem 1rem;
-}
+}*/

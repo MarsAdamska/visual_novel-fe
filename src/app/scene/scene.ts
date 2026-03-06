@@ -1,14 +1,64 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { Choice } from '../choice-model';
+import { SpriteComponent } from "../sprite/sprite";
+import { DialogueComponent } from "../dialogue/dialogue";
+import { ChoiceComponent } from "../choice/choice";
+
+@Component({
+  selector: 'app-scene',
+  templateUrl: './scene.html',
+  styleUrls: ['./scene.css'],
+  imports: [SpriteComponent, DialogueComponent, ChoiceComponent]
+})
+export class SceneComponent {
+
+  background = "'img/scene/bg/room.jpg'";
+
+  //characterSprite = "assets/sprites/character.png";
+
+  sprites = [
+    {
+      id: 'protag',
+      name: 'Protag',
+      url: 'img/sprite/sprite1.png',
+      position: 'left'
+    },
+    {
+      id: 'npc',
+      name: 'Protag',
+      url: 'img/sprite/sprite2.png',
+      position: 'right'
+    }
+  ];
+
+  dialogueText = "Cosa posso fare per te?";
+
+  choices: Choice[] = [
+    new Choice("Come ti chiami?", "scene2"),
+    new Choice("Dov'è il bagno?", "scene3")
+  ];
+characterSprite!: string;
+leftSprite!: string;
+rightSprite!: string;
+
+  onChoiceSelected(choice: Choice) {
+    console.log("Scelta:", choice);
+  }
+
+}
+
+/*import { Component, Input } from '@angular/core';
 import { Choice } from '../choice/choice';
 import { ChoiceModel } from '../choice-model';
 import { SpriteComponent } from '../sprite/sprite';
 import { Dialogue } from '../dialogue/dialogue';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-scene',
   standalone: true,
-  imports: [Choice, SpriteComponent, Dialogue],
+  imports: [CommonModule, Choice, SpriteComponent, Dialogue],
   templateUrl: './scene.html',
   styleUrls: ['./scene.css'],
 })
@@ -23,16 +73,16 @@ export class Scene {
     background?: string;
   }> = {
     start: {
-      text: 'Ti svegli in una stanza buia.',
-      background: 'img/bg/room.jpg',
+      text: 'Cosa vuoi comprare?',
+      background: 'img/scene/bg/room.jpg',
       choices: [
-        new ChoiceModel('Accendi la luce', 'light'),
-        new ChoiceModel('Urla aiuto', 'scream')
+        new ChoiceModel('20 granate', 'esplodi'),
+        new ChoiceModel('Niente', 'esci')
       ]
     },
     light: {
       text: 'La stanza è vuota.',
-      background: 'img/bg/room_light.jpg',
+      background: 'img/scene/bg/room_light.jpg',
       choices: []
     },
     scream: {
@@ -80,4 +130,4 @@ export class Scene {
       text: this.currentNode.text
     };
   }
-}
+}*/

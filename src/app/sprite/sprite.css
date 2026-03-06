@@ -1,4 +1,32 @@
-.sprite {
+.sprite-container{
+  display:flex;
+  align-items:flex-end;
+
+  flex:0 0 auto; /* impedisce allo sprite di allargarsi */
+}
+
+.sprite{
+  max-height:60vh;
+  width:auto;
+  object-fit:contain;
+}
+
+.left{
+  justify-content:flex-start;
+}
+
+.right{
+  justify-content:flex-end;
+}
+
+
+/*.sprite{
+  height:60%;
+  align-self:center;
+}*/
+
+
+/*.sprite {
   position: absolute;
   bottom: 0;
 }
@@ -19,3 +47,8 @@
 .sprite img {
   height: 90vh;
 }
+*/
+
+/*.sprite img {
+  max-height: 60vh;
+}*/

@@ -1,3 +1,11 @@
-<div class="sprite" [ngClass]="position">
+<img
+  class="sprite"
+  [src]="sprite"
+  [class.left]="position === 'left'"
+  [class.right]="position === 'right'"
+>
+
+
+<!--<div class="sprite" [ngClass]="position">
   <img [src]="url" [alt]="name" />
-</div>
+</div>-->

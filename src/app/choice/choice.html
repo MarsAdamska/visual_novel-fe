@@ -1,3 +1,13 @@
+<div class="choices">
+
+  @for (choice of choices; track choice) {
+  <button (click)="selectChoice(choice)">
+    {{ choice.text }}
+  </button>
+}
+
+</div>
+
 <!--<button
   *ngFor="let choice of choices"
   (click)="selectChoice(choice)"
@@ -5,7 +15,7 @@
   {{ choice.text }}
 </button>-->
 
-<div class="choices-container">
+<!--<div class="choices-container">
   <button
     *ngFor="let choice of choices"
     class="choice-button"
@@ -13,4 +23,4 @@
   >
     {{ choice.text }}
   </button>
-</div>
+</div>-->

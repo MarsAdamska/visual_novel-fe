@@ -1,4 +1,15 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { SceneComponent } from "./scene/scene";
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.html',
+  styleUrls: ['./app.css'],
+  imports: [SceneComponent]
+})
+export class AppComponent { }
+
+/*import { Component, signal } from '@angular/core';
 import { Scene } from './scene/scene';
 
 @Component({
@@ -13,4 +24,4 @@ export class App {
   bg = 'img/scene/bg1.png';
 
   currentDialogue: any = null;
-}
+}*/

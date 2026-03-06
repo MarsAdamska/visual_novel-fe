@@ -2,6 +2,19 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dialogue',
+  templateUrl: './dialogue.html',
+  styleUrls: ['./dialogue.css']
+})
+export class DialogueComponent {
+
+  @Input() text!: string;
+
+}
+
+/*import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-dialogue',
   standalone: true,
   templateUrl: './dialogue.html',
   styleUrls: ['./dialogue.css'],
@@ -12,4 +25,4 @@ export class Dialogue {
     speakerName: string;
     text: string;
   };
-}
+}*/

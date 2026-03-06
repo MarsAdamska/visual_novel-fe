@@ -1,4 +1,11 @@
-export class ChoiceModel {
+export class Choice {
+    constructor(
+        public text: string,
+        public nextScene: string
+    ) { }
+}
+
+/*export class ChoiceModel {
     text: string;
     targetNodeId: string;
 
@@ -6,5 +13,5 @@ export class ChoiceModel {
         this.text = text;
         this.targetNodeId = targetNodeId;
     }
-}
+}*/
 

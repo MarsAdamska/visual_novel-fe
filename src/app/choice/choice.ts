@@ -1,4 +1,24 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Choice } from '../choice-model';
+
+@Component({
+  selector: 'app-choice',
+  templateUrl: './choice.html',
+  styleUrls: ['./choice.css']
+})
+export class ChoiceComponent {
+
+  @Input() choices: Choice[] = [];
+
+  @Output() choiceSelected = new EventEmitter<Choice>();
+
+  selectChoice(choice: Choice) {
+    this.choiceSelected.emit(choice);
+  }
+
+}
+
+/*import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ChoiceModel } from '../choice-model';
 import { CommonModule } from '@angular/common';
 
@@ -17,3 +37,4 @@ export class Choice {
     this.choiceSelected.emit(choice);
   }
 }
+*/

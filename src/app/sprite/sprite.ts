@@ -1,4 +1,19 @@
 import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-sprite',
+  templateUrl: './sprite.html',
+  styleUrl: './sprite.css'
+})
+export class SpriteComponent {
+
+  @Input() sprite!: string;
+  @Input() position!: string;
+
+}
+
+
+/*import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,3 +30,4 @@ export class SpriteComponent {
   //@Input() position?: 'left' | 'center' | 'right'; 
    @Input() position?: string;
 }
+*/
